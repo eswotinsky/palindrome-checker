@@ -21,6 +21,11 @@ namespace Palindromes.TestTools
       Palindrome testString = new Palindrome("1");
       Assert.AreEqual(true, testString.InputCheck());
     }
-
+    [TestMethod]
+    public void UserInput_InputIsPalindrome_True()
+    {
+      Palindrome showInput = new Palindrome("b");
+      Assert.AreEqual(true, showInput.UserInput());
+    }
   }
 }
