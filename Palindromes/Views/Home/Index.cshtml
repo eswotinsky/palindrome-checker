@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Palindromes!</h1>
+  <h3>Enter a word or a sentence and we will tell you if it is a Palindrome!</h3>
+  <form action="/" method="post">
+    <label for="enter-user-input">Enter a word or a sentence:</label>
+    <input type="text" name="enter-user-input" class="form-group">
+    <br>
+    <br>
+    <hr>
+    <button type="submit" class="btn">Check!</button>
+    <hr>
+  </form>
+
+
+  @if(Model != null)
+  {
+    <h3>@Model.GetInput()</h3>
+    if(Model.IsPalindrome())
+    {
+      <p>Congrats, you entered a palindrome</p>
+    }
+    else
+    {
+      <p>Not a palindrome, sorry!</p>
+    }
+  }
+
+</div>

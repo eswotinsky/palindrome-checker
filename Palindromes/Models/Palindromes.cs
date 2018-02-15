@@ -12,21 +12,12 @@ namespace Palindromes.Models
     //Constructor
     public Palindrome(string userInput)
     {
-      _userInput = userInput.Replace(" ", ""); 
+      _userInput = userInput.Replace(" ", "");
     }
 
-    public bool InputCheck()
+    public string GetInput()
     {
-      bool UserInputHasDigits = _userInput.All(char.IsDigit);
-
-      if(UserInputHasDigits)
-      {
-        return true; //and prompt user to enter a word
-      }
-      else
-      {
-        return false;
-      }
+      return _userInput;
     }
 
     public bool IsPalindrome()
