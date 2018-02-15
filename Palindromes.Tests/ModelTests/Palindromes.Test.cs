@@ -22,10 +22,46 @@ namespace Palindromes.TestTools
       Assert.AreEqual(true, testString.InputCheck());
     }
     [TestMethod]
-    public void UserInput_InputIsPalindrome_True()
+    public void IsPalindrome_InputIsPalindrome_True()
     {
       Palindrome showInput = new Palindrome("b");
-      Assert.AreEqual(true, showInput.UserInput());
+      Assert.AreEqual(true, showInput.IsPalindrome());
+    }
+    [TestMethod]
+    public void IsPalindrome_TwoLetterPalindrome_False()
+    {
+      Palindrome showInput = new Palindrome("oh");
+      Assert.AreEqual(false, showInput.IsPalindrome());
+    }
+    [TestMethod]
+    public void IsPalindrome_ThreeLetterPalindrome_True()
+    {
+      Palindrome showInput = new Palindrome("aha");
+      Assert.AreEqual(true, showInput.IsPalindrome());
+    }
+    [TestMethod]
+    public void IsPalindrome_MultipleLetterPalindrome_True()
+    {
+      Palindrome showInput = new Palindrome("racecar");
+      Assert.AreEqual(true, showInput.IsPalindrome());
+    }
+    [TestMethod]
+    public void IsPalindrome_PalindromeWithSpaces_True()
+    {
+      Palindrome showInput = new Palindrome("race car");
+      Assert.AreEqual(true, showInput.IsPalindrome());
+    }
+    [TestMethod]
+    public void IsPalindrome_PalindromeWithSpaces_False()
+    {
+      Palindrome showInput = new Palindrome("french fry");
+      Assert.AreEqual(false, showInput.IsPalindrome());
+    }
+    [TestMethod]
+    public void IsPalindrome_PalindromeWithCharacters_False()
+    {
+      Palindrome showInput = new Palindrome("@#$%&*/?");
+      Assert.AreEqual(false, showInput.IsPalindrome());
     }
   }
 }

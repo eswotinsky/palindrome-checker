@@ -1,6 +1,5 @@
 using System;
 using System.Text;
-using System.Collections.Generic.IEnumerable;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -9,19 +8,13 @@ namespace Palindromes.Models
   public class Palindrome
   {
     private string _userInput;
-    private string _reversedUserInput; // need to eventually set it to the reversed version of _userInput
 
     //Constructor
     public Palindrome(string userInput)
     {
-
-      //convert userInput to charArray, reverse charArray, make _reversedUserInput = to string of char array.
-      char[] chars = _userInput.ToCharArray();
-      //newArray = userInput.ToCharArray
-      char[] reversedUserInput = chars.Reverse();
-      //reversedString = newArray.converttostring
-      //_reversedUserInput = reversedString
+      _userInput = userInput.Replace(" ", ""); 
     }
+
     public bool InputCheck()
     {
       bool UserInputHasDigits = _userInput.All(char.IsDigit);
@@ -35,18 +28,26 @@ namespace Palindromes.Models
         return false;
       }
     }
-    public bool UserInput()
-    {
-      bool isEqual = chars.SequenceEqual(reversedUserInput);
 
-      if(isEqual)
-      {
-        return true;
-      }
-      else
-      {
-        return false;
-      }
+    public bool IsPalindrome()
+    {
+        int min = 0;
+        int max = _userInput.Length - 1;
+        while (true)
+        {
+            if (min > max)
+            {
+                return true;
+            }
+            char a = _userInput[min];
+            char b = _userInput[max];
+            if (char.ToLower(a) != char.ToLower(b))
+            {
+                return false;
+            }
+            min++;
+            max--;
+        }
     }
   }
 }
