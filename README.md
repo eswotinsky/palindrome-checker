@@ -1,7 +1,7 @@
 #### Specifications
-* Program should check whether user input contains any digits.
-  * If it does contain digits, return false and prompt user to enter a word
-  * If it does not contain any, return true
+√* Program should check whether user input contains any digits.
+  √* If it does contain digits, return false and prompt user to enter a word
+  √* If it does not contain any, return true
 
 * Check to see if the user input is returned at all and if it returns a bool.
   * Input: "a"
