@@ -9,7 +9,6 @@ namespace Palindromes.Models
   {
     private string _userInput;
 
-    //Constructor
     public Palindrome(string userInput)
     {
       _userInput = userInput.Replace(" ", "");

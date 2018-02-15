@@ -15,7 +15,6 @@ namespace Palindromes.Controllers
     public ActionResult PalindromeResult()
     {
       Palindrome inputtedWord = new Palindrome(Request.Form["enter-user-input"]);
-
       return View("Index", inputtedWord);
     }
   }
